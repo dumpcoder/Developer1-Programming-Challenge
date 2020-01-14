@@ -1,3 +1,11 @@
+def main():
+    inputFilename = 'input.txt'
+    words = getWordsFromFile(inputFilename)
+    histogram, justLength = createHistogramAndGetJustification(words)
+    outputFilename = 'output.txt'
+    writeHistogramToFile(outputFilename, histogram, justLength)
+
+
 def getWordsFromFile(filename):
     inputFile = open(filename, 'r')
     paragraph = inputFile.read() + ' '
@@ -6,6 +14,7 @@ def getWordsFromFile(filename):
 
 
 def parseParagraphForWords(paragraph):
+    # Set of common delimiters
     delimiters = {' ','.',',','\n', ':', ';', '"', '(' ')', '{', '}', '[', ']', '?', '!'}
 
     words = []
@@ -24,30 +33,33 @@ def parseParagraphForWords(paragraph):
     return words
 
 
-def main():
-    filename = "input.txt"
-    words = getWordsFromFile(filename)
-
-
+def createHistogramAndGetJustification(words):
     histogram = {}
-    justify = 0
+    # JustLength equals to the max word length in words
+    justLength = 0
     for word in words:
         if word in histogram:
             histogram[word] += 1
         else:
             histogram[word] = 1
             wordLength = len(word)
-            if wordLength > justify:
-                justify = wordLength
+            if wordLength > justLength:
+                justLength = wordLength
 
+    # Sorts histogram by value, and returns a list of key/value tuples. 
     histogram = sorted(histogram.items(), key=lambda x: x[1], reverse=True)
-    outputFile = open('output.txt', 'w')
+
+    return (histogram, justLength)
+
+
+def writeHistogramToFile(filname, histogram, justLength):
+    outputFile = open(filname, 'w')
     for item in histogram:
         word = item[0]
         count = item[1]
-        outputFile.write(f'{word.rjust(justify)} | {chr(35) * count} ({count})\n')
+        outputFile.write(f'{word.rjust(justLength)} | {chr(35) * count} ({count})\n')
     outputFile.close()
+
 
 if __name__ == '__main__':
     main()
-
