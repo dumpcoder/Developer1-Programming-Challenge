@@ -1,6 +1,6 @@
 # Developer1-Programming-Challenge
 HEB Developer1 Programming challenge
-
+![Console](https://raw.githubusercontent.com/dumpcoder/Developer1-Programming-Challenge/master/sample.gif)
 # Version Support
   I created and tested this programming challenge using Python 3.7.3.
 Please use this version or a version that supports python's sorted function and f-strings.
