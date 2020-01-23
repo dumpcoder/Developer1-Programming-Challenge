@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import argparse
+import re
 
 def main():
     parser = argparse.ArgumentParser()
@@ -9,38 +10,18 @@ def main():
     args = parser.parse_args()
 
     inputFilename = args.infile
+    outputFilename = args.outfile if args.outfile else "output.txt"
+
     words = getWordsFromFile(inputFilename)
     histogram, justLength = createHistogramAndGetJustification(words)
-    outputFilename = args.outfile if args.outfile else "output.txt"
     writeHistogramToFile(outputFilename, histogram, justLength)
 
 
 def getWordsFromFile(filename):
     inputFile = open(filename, 'r')
-    paragraph = inputFile.read() + ' '
+    paragraph = inputFile.read()
     inputFile.close()
-    return parseParagraphForWords(paragraph)
-
-
-def parseParagraphForWords(paragraph):
-    # Set of common delimiters
-    delimiters = {' ','.',',','\n', ':', ';', '"', '(' ')', '{', '}', '[', ']', '?', '!', '<', '>', '/'}
-
-    words = []
-    curWord = ""
-    write = False
-    for char in paragraph:
-        if char in delimiters and not write:
-            continue
-        if char in delimiters:
-            write = False
-            words.append(curWord)
-            curWord = ""
-        else:
-            write = True
-            curWord += char.lower()
-    return words
-
+    return list(re.findall(re.compile('\w+'), paragraph.lower()))
 
 def createHistogramAndGetJustification(words):
     histogram = {}
