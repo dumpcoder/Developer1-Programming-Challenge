@@ -4,8 +4,8 @@ import argparse
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('infile',help="Input filename")
-    parser.add_argument('outfile', nargs='?',help="Output filename")
+    parser.add_argument('infile',help="Input Filename")
+    parser.add_argument('outfile', nargs='?',help="Output Filename")
     args = parser.parse_args()
 
     inputFilename = args.infile
