@@ -62,7 +62,9 @@ def writeHistogramToFile(filname, histogram, justLength):
     for item in histogram:
         word = item[0]
         count = item[1]
-        outputFile.write(f'{word.rjust(justLength)} | {chr(35) * count} ({count})\n')
+        line = f'{word.rjust(justLength)} | {chr(35) * count} ({count})\n'
+        outputFile.write(line)
+        print(line, end='')
     outputFile.close()
 
 
