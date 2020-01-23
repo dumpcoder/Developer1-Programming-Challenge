@@ -5,6 +5,14 @@ HEB Developer1 Programming challenge
   I created and tested this programming challenge using Python 3.7.3.
 Please use this version or a version that supports python's sorted function and f-strings.
 
+# Installing
+In order to install and use this program as a enviorment command run the following commands (Tested on Mac OS)</br>
+git clone https://github.com/dumpcoder/Developer1-Programming-Challenge.git</br>
+cd Developer1-Programming-Challenge</br>
+sudo cp histogram.py /usr/local/bin/histo</br>
+sudo chmod 777 /usr/local/bin/histo</br>
+
+
 # Approach 
  <p> Due to the length and low complexity of the programming challenge I decided the
 procedural programming paradigm was best suited. Yes an objected oriented approach could of
