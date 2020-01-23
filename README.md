@@ -12,7 +12,7 @@ made the code cleaner, but I think Python is better suited for procedural progra
   In my procedural programming approach I divided each task into it's own function in order to
 bulid layers of abstraction. In the top layer of abstraction there are only three task(functions):
 get words from file, create histogram and get justification length(this is done at the same time),
-and write histogram to file.</p<
+and write histogram to file.</p>
 
 # Challenge Extended
 <p>To make this programming challenge a practal piece of software, that is a command line application,
