@@ -4,16 +4,19 @@ import argparse
 import re
 
 def main():
+    #Argument Parsing
     parser = argparse.ArgumentParser()
     parser.add_argument('infile',help="Input Filename")
     parser.add_argument('outfile', nargs='?',help="Output Filename")
     args = parser.parse_args()
 
+    #Filenames
     inputFilename = args.infile
     outputFilename = args.outfile if args.outfile else "output.txt"
 
+    #Main Tasks
     words = getWordsFromFile(inputFilename)
-    histogram, justLength = createHistogramAndGetJustification(words)
+    histogram, justLength = createHistogramAndGetJustificationLength(words)
     printAndWriteHistogramToFile(outputFilename, histogram, justLength)
 
 
@@ -23,7 +26,7 @@ def getWordsFromFile(filename):
     inputFile.close()
     return list(re.findall(re.compile('\w+'), paragraph.lower()))
 
-def createHistogramAndGetJustification(words):
+def createHistogramAndGetJustificationLength(words):
     histogram = {}
     # JustLength equals to the max word length in words (for output styling)
     justLength = 0
