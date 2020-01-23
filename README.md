@@ -9,10 +9,10 @@ Please use this version or a version that supports python's sorted function and 
 In order to install and use this program as a enviorment command run the following commands (Tested on Mac OS)</br>
 </br>
 <b>
-git clone https://github.com/dumpcoder/Developer1-Programming-Challenge.git</br>
-cd Developer1-Programming-Challenge</br>
-sudo cp histogram.py /usr/local/bin/histo</br>
-sudo chmod 777 /usr/local/bin/histo</br>
+1) git clone https://github.com/dumpcoder/Developer1-Programming-Challenge.git</br>
+2) cd Developer1-Programming-Challenge</br>
+3) sudo cp histogram.py /usr/local/bin/histo</br>
+4) sudo chmod 777 /usr/local/bin/histo</br>
 </b>
 
 # Approach 
