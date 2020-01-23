@@ -14,7 +14,7 @@ def main():
 
     words = getWordsFromFile(inputFilename)
     histogram, justLength = createHistogramAndGetJustification(words)
-    writeHistogramToFile(outputFilename, histogram, justLength)
+    printAndWriteHistogramToFile(outputFilename, histogram, justLength)
 
 
 def getWordsFromFile(filename):
@@ -25,7 +25,7 @@ def getWordsFromFile(filename):
 
 def createHistogramAndGetJustification(words):
     histogram = {}
-    # JustLength equals to the max word length in words
+    # JustLength equals to the max word length in words (for output styling)
     justLength = 0
     for word in words:
         if word in histogram:
@@ -42,7 +42,7 @@ def createHistogramAndGetJustification(words):
     return (histogram, justLength)
 
 
-def writeHistogramToFile(filname, histogram, justLength):
+def printAndWriteHistogramToFile(filname, histogram, justLength):
     outputFile = open(filname, 'w')
     for item in histogram:
         word = item[0]
