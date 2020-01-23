@@ -1,13 +1,17 @@
+#!/usr/bin/python3
+
 import argparse
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("filename",help="text filename to create histogram out of.")
+    parser.add_argument('infile',help="Input filename")
+    parser.add_argument('outfile', nargs='?',help="Output filename")
     args = parser.parse_args()
-    inputFilename = args.filename
+
+    inputFilename = args.infile
     words = getWordsFromFile(inputFilename)
     histogram, justLength = createHistogramAndGetJustification(words)
-    outputFilename = 'output.txt'
+    outputFilename = args.outfile if args.outfile else "output.txt"
     writeHistogramToFile(outputFilename, histogram, justLength)
 
 
@@ -20,7 +24,7 @@ def getWordsFromFile(filename):
 
 def parseParagraphForWords(paragraph):
     # Set of common delimiters
-    delimiters = {' ','.',',','\n', ':', ';', '"', '(' ')', '{', '}', '[', ']', '?', '!'}
+    delimiters = {' ','.',',','\n', ':', ';', '"', '(' ')', '{', '}', '[', ']', '?', '!', '<', '>', '/'}
 
     words = []
     curWord = ""
