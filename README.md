@@ -6,7 +6,7 @@ HEB Developer1 Programming challenge
 Please use this version or a version that supports python's sorted function and f-strings.
 
 # Installing
-In order to install and use this program as a enviorment command run the following commands (Tested on Mac OS)</br>
+In order to install and use this program as a enviorment command run the following commands on a terminal (Tested on Mac OS)</br>
 </br>
 <b>
 1) git clone https://github.com/dumpcoder/Developer1-Programming-Challenge.git</br>
@@ -17,10 +17,10 @@ In order to install and use this program as a enviorment command run the followi
 
 # Usage
 <p>Once this program is installed as a command, a argument needs to passed. This is of course the input filename<p>
-  e.g <b>histo input.txt</b>
+  e.g <b>> histo input.txt</b>
 <p>Optionally a second argument can passed to name the output file. If this argument isn't passed the default
   ouput filename will be <b>output.txt</b></p>
-  e.g. <b>histo input.txt custom.txt</b>
+  e.g. <b>> histo input.txt custom.txt</b>
 
 # Approach 
  <p> Due to the length and low complexity of the programming challenge I decided the
