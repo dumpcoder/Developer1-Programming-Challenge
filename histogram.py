@@ -1,5 +1,10 @@
+import argparse
+
 def main():
-    inputFilename = 'input.txt'
+    parser = argparse.ArgumentParser()
+    parser.add_argument("filename",help="text filename to create histogram out of.")
+    args = parser.parse_args()
+    inputFilename = args.filename
     words = getWordsFromFile(inputFilename)
     histogram, justLength = createHistogramAndGetJustification(words)
     outputFilename = 'output.txt'
