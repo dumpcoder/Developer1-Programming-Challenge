@@ -18,6 +18,6 @@ and write histogram to file.</p>
 <p>To make this programming challenge a practal piece of software, that is a command line application,
 a filename would be given as an argument instead. This can be done using python's argparse libary, 
 which is able to read any arguments passed in the console before executing the program.</p>
-e.g  ~>histogram input.txt
+e.g  ~>histo input.txt
 <p>Even better argparse can even handle flags/options like outputing to a specific filename</p>
-e.g ~>histogram input.txt -o customFilename.txt
+e.g ~>histo input.txt customFilename.txt
